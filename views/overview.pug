@@ -1,0 +1,35 @@
+extends base 
+
+block content 
+    .join-container
+        header.join-header
+            h1
+                i.fas.fa-smile ChatCord
+      
+        main.join-main
+            form.joinForm
+                //-form.joinForm(action= 'chat.html')
+                .form-control
+                    label(for='username') Username
+                    input#username(type='text', name='username', placeholder='Enter username...', required)
+                .form-control
+                    label(for='room') Room
+                    select#room(name='room')
+                        option(value='JavaScript') JavaScript
+                        option(value='Python') Python
+                        option(value='PHP') PHP
+                        option(value='C#') C#
+                        option(value='Ruby') Ruby
+                        option(value='Java') Java
+    
+                //-button.btn(type='submit') Join Chat
+                button.btn.join-btn Join Chat  
+            //- button.btn.algo Click
+
+    //- script(
+    //-   src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'
+    //-   integrity='sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=='
+    //-   crossorigin='anonymous'
+    //- )
+    //-script(src='/js/joinRoom.js')
+    script(src='/js/bundle.js')

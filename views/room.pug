@@ -1,0 +1,37 @@
+extends base 
+
+block content 
+    .chat-container
+        header.chat-header
+            h1 
+                i.fas.fa-smile ChatCord
+            a.btn(href='/') Leave Room
+
+        main.chat-main(data-user= user)
+            .chat-sidebar
+                h3 
+                    i.fas.fa-comments Room Name:
+                h2#room-name= user.activeRoom
+                h3
+                    i.fas.fa-users Users
+                ul#users
+                
+            .chat-messages
+        .chat-form-container
+            form#chat-form
+                input#msg(
+                    type='text'
+                    placeholder='Enter Message'
+                    required
+                    autocomplete='off'
+                )
+                
+                button.btn  
+                    i.fas.fa-paper-plane Send
+
+    //-script(
+      src='https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js'
+      integrity='sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4='
+      crossorigin='anonymous')
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/main.js')
